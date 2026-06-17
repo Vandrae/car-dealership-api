@@ -6,7 +6,15 @@ import jakarta.persistence.*;
 @Table(name = "dealerships")
 public class DealershipModel {
 
+    //@Id assigns as primary key
     @Id
+    //auto generates and increments on newly created fields
+    /*ex:
+    id: 1 name: bob
+    id: 2 name: justin
+    id: 3 name: mark
+    id: 4 name: dave
+    */
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int dealershipId;
 
