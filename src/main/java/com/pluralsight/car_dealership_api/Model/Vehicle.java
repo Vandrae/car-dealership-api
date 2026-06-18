@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "vehicles")
-public class VehicleModel {
+public class Vehicle {
     @Id
     private String vin;
 

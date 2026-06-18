@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "dealerships")
-public class DealershipModel {
+public class Dealership {
 
     //@Id assigns as primary key
     @Id
