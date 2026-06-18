@@ -25,10 +25,14 @@ public class VehicleService {
     }
 
     public List<Vehicle> getVehicleByMinPrice(double price){
-        return vehicleRepo.findByMinPrice(price);
+        return vehicleRepo.findByPriceLessThanEqual(price);
     }
 
     public List<Vehicle> getVehicleByMaxPrice(double price){
-        return vehicleRepo.findByMaxPrice(price);
+        return vehicleRepo.findByPriceGreaterThanEqual(price);
+    }
+
+    public List<Vehicle> getVehicleByMake(String make){
+        return vehicleRepo.findByMake(make);
     }
 }

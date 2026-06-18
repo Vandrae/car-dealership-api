@@ -10,7 +10,7 @@ import java.util.List;
 //JpaRepository<> the class name of the model goes first then the data type but, it cant be primitive.
 // ex: Integer not int
 public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
-    List<Vehicle> findByMinPrice(double minPrice);
-    List<Vehicle> findByMaxPrice(double maxPrice);
+    List<Vehicle> findByPriceLessThanEqual(double minPrice);
+    List<Vehicle> findByPriceGreaterThanEqual(double maxPrice);
+    List<Vehicle> findByMake(String make);
 }
-

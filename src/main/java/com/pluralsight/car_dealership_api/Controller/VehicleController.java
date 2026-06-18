@@ -36,4 +36,9 @@ public class VehicleController {
     public ResponseEntity <List<Vehicle>> getVehicleByMaxPrice(double price){
         return ResponseEntity.ok(vehicleService.getVehicleByMinPrice(price));
     }
+
+    @GetMapping("/make")
+    public ResponseEntity <List<Vehicle>> getVehicleByMake(String make){
+        return ResponseEntity.ok(vehicleService.getVehicleByMake(make));
+    }
 }
