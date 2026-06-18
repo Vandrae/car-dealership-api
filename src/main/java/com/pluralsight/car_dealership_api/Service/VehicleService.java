@@ -1,16 +1,34 @@
 package com.pluralsight.car_dealership_api.Service;
 
 import com.pluralsight.car_dealership_api.Model.Vehicle;
-import com.pluralsight.car_dealership_api.Repo.VehicleRepo;
+import com.pluralsight.car_dealership_api.Repo.VehicleRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class VehicleService {
-    private VehicleRepo vehicleRepo;
+
+    private VehicleRepository vehicleRepo;
+
+    public VehicleService(VehicleRepository vehicleRepo) {
+        this.vehicleRepo = vehicleRepo;
+    }
 
     public List<Vehicle> getAllVehicles(){
-        return
+        return vehicleRepo.findAll();
+    }
+        //i dont really understand this
+    public Vehicle getVehicleByID(int id){
+        return vehicleRepo.findById(id)
+                .orElseThrow(()-> new RuntimeException("Id not found"));
+    }
+
+    public List<Vehicle> getVehicleByMinPrice(double price){
+        return vehicleRepo.findByMinPrice(price);
+    }
+
+    public List<Vehicle> getVehicleByMaxPrice(double price){
+        return vehicleRepo.findByMaxPrice(price);
     }
 }

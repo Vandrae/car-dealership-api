@@ -20,6 +20,7 @@ public class Vehicle {
 
     private double price;
 
+    //Getter/Setters
     public String getVin() {
         return vin;
     }

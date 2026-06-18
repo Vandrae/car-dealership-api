@@ -3,10 +3,7 @@ package com.pluralsight.car_dealership_api.Controller;
 import com.pluralsight.car_dealership_api.Model.Vehicle;
 import com.pluralsight.car_dealership_api.Service.VehicleService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 //use @restcontroller instead of controller
@@ -25,12 +22,18 @@ public class VehicleController {
         return vehicleService.getAllVehicles();
     }
 
-
     @GetMapping("/{id}")
     public ResponseEntity<Vehicle> getVehicleByID(@PathVariable int id){
-        return VehicleService.getVehicleByID(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+        return ResponseEntity.ok(vehicleService.getVehicleByID(id));
     }
 
+    @GetMapping("/minprice")
+    public ResponseEntity <List <Vehicle>> getVehicleByMinPrice(double price){
+        return ResponseEntity.ok(vehicleService.getVehicleByMinPrice(price));
+    }
+
+    @GetMapping("/maxprice")
+    public ResponseEntity <List<Vehicle>> getVehicleByMaxPrice(double price){
+        return ResponseEntity.ok(vehicleService.getVehicleByMinPrice(price));
+    }
 }
