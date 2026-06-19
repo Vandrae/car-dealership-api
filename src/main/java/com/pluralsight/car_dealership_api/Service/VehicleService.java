@@ -19,7 +19,7 @@ public class VehicleService {
         return vehicleRepo.findAll();
     }
         //i dont really understand this
-    public Vehicle getVehicleByID(int id){
+    public Vehicle getVehicleByID(String id){
         return vehicleRepo.findById(id)
                 .orElseThrow(()-> new RuntimeException("Id not found"));
     }

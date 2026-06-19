@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-//JpaRepository<> the class name of the model goes first then the data type but, it cant be primitive.
-// ex: Integer not int
-public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
+//JpaRepository<> the class name of the model goes first then the data type of the primary key,
+// it cant be primitive. ex: Integer not int
+public interface VehicleRepository extends JpaRepository<Vehicle, String> {
     List<Vehicle> findByPriceLessThanEqual(double minPrice);
     List<Vehicle> findByPriceGreaterThanEqual(double maxPrice);
     List<Vehicle> findByMake(String make);
