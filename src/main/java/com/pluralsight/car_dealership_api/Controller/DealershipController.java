@@ -1,7 +1,16 @@
 package com.pluralsight.car_dealership_api.Controller;
 
-import org.springframework.stereotype.Controller;
+import com.pluralsight.car_dealership_api.Service.DealershipService;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+@RequestMapping("/api/dealership")
+
 public class DealershipController {
+    private DealershipService dealershipService;
+
+    public DealershipController(DealershipService dealershipService){
+        this.dealershipService= dealershipService;
+    }
 }

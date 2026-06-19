@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 //use @restcontroller instead of controller
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api/Vehicles")
 public class VehicleController {
 
     private final VehicleService vehicleService;
@@ -22,7 +22,7 @@ public class VehicleController {
         return vehicleService.getAllVehicles();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<Vehicle> getVehicleByID(@PathVariable int id){
         return ResponseEntity.ok(vehicleService.getVehicleByID(id));
     }
