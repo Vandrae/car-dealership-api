@@ -12,5 +12,6 @@ import java.util.List;
 public interface VehicleRepository extends JpaRepository<Vehicle, String> {
     List<Vehicle> findByPriceLessThanEqual(Double minPrice);
     List<Vehicle> findByPriceGreaterThanEqual(Double maxPrice);
-    List<Vehicle> findByMake(String make);
+    List<Vehicle> findByMakeLike(String make);
+
 }

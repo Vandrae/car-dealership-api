@@ -22,9 +22,12 @@ public class Vehicle {
     @Id
     private String vin;
 
+    @Column(columnDefinition = "YEAR")
     private int year;
 
     private String make;
+
+    private String model;
 
     private String vehicleType;
 

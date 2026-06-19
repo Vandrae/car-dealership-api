@@ -33,6 +33,10 @@ public class VehicleService {
     }
 
     public List<Vehicle> getVehicleByMake(String make){
-        return vehicleRepo.findByMake(make);
+        return vehicleRepo.findByMakeLike(make);
+    }
+
+    public Vehicle createVehicle(Vehicle vehicle){
+        return vehicleRepo.save(vehicle);
     }
 }
