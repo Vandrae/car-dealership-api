@@ -38,6 +38,15 @@ public class Vehicle {
     private double price;
 
     //Getter/Setters
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
     public String getVin() {
         return vin;
     }

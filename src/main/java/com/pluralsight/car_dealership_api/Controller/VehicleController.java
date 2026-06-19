@@ -46,7 +46,7 @@ public class VehicleController {
     }
 
     //error when post "Column 'model' cannot be null"
-    @PostMapping("/add")
+    @PostMapping
     public ResponseEntity <Vehicle> newVehicle(@RequestBody Vehicle vehicle){
         return ResponseEntity.ok(vehicleService.createVehicle(vehicle));
     }
