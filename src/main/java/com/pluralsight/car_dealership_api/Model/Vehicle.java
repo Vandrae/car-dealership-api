@@ -1,9 +1,23 @@
 package com.pluralsight.car_dealership_api.Model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "vehicles")
+//orders the json output in a specific order
+@JsonPropertyOrder(
+        {
+            "vin",
+            "year",
+            "make",
+            "model",
+            "vehicleType",
+            "color",
+            "odometer",
+            "price"
+        })
+
 public class Vehicle {
     @Id
     private String vin;

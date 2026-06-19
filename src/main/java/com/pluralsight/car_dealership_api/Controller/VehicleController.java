@@ -27,13 +27,15 @@ public class VehicleController {
         return ResponseEntity.ok(vehicleService.getVehicleByID(id));
     }
 
-    @GetMapping("/minprice")
-    public ResponseEntity <List <Vehicle>> getVehicleByMinPrice(double price){
+    //this lets you enter the min price ex: /minprice/20000
+    //the otherway would be  replacing PathVariable with RequestParam and adding ?price=20000 after/minprice
+    @GetMapping("/minprice/{price}")
+    public ResponseEntity <List <Vehicle>> getVehicleByMinPrice(@PathVariable Double price){
         return ResponseEntity.ok(vehicleService.getVehicleByMinPrice(price));
     }
 
-    @GetMapping("/maxprice")
-    public ResponseEntity <List<Vehicle>> getVehicleByMaxPrice(double price){
+    @GetMapping("/maxprice/{price}")
+    public ResponseEntity <List<Vehicle>> getVehicleByMaxPrice(@PathVariable Double price){
         return ResponseEntity.ok(vehicleService.getVehicleByMinPrice(price));
     }
 
